@@ -14,8 +14,13 @@ def character_check(text):
         character_counts[character] = character_counts.get(character, 0) + 1
     return character_counts
 
+def split_dict(dict):
+    return [{key: value} for key, value in dict.items()]
+
+def get_count(dict):
+    return list(dict.values())[0]
+
 def sort_dict(dict):
-    sorted_dict = []
-    sorted_dict = dict.split()
-    sorted_dict.sort(reverse=True, key=sorted_dict)
-    return sorted_dict["num"]
+    list = split_dict(dict)
+    list.sort(reverse=True, key=get_count)
+    return list
